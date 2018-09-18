@@ -2,6 +2,7 @@ const form = document.getElementById('form');
 const searchInput = document.getElementById('id_search');
 const resultField = document.getElementById('result');
 const baseUrl = 'https://efounbqifq-dsn.algolia.net/1/indexes/Product_v2_en?';
+let timer;
 
 
 const sendData = (value) => {
@@ -20,13 +21,12 @@ const sendData = (value) => {
   if (xhr.status !== 200) {
     resultField.innerHTML = xhr.status + ': ' + xhr.statusText;
   } else {
-    // resultField.innerHTML = xhr.responseText;
-    console.log(xhr);
+    resultField.innerHTML = JSON.parse(xhr.hits);
   }
 }
 
 searchInput.oninput = () => {
-  const req = setTimeout(() => sendData(searchInput.value), 100);
+  timer
+    ? clearTimeout(timer)
+    : timer = setTimeout(() => sendData(searchInput.value), 100);
 };
-
-// form.submit();
