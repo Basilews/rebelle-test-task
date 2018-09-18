@@ -1,0 +1,39 @@
+.app {
+  min-width: 298px;
+  max-width: 400px;
+  margin: 16px auto;
+  box-sizing: border-box;
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.input {
+  display: block;
+  width: 160px;
+  height: 20px;
+  margin-top: 8px;
+  padding-left: 8px;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.result {
+  padding: 0;
+  list-style-type: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.text {
+  margin-left: 8px;
+}
